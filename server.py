@@ -1,9 +1,10 @@
 from flask import Flask
-import os
+app = Flask(__name__, static_folder='./python-flask-app/build', static_url_path='/') # where static files are stored
+# static_url_path is seen in front end, static_folder seen in backend 
 
-flask_app = Flask(__name__)
-@flask_app.route('/')
+@app.route('/')
 def index():
-    return flask_app.send_static_file('index.html')
-if __name__ == '__main__':
-    flask_app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+    return app.send_static_file('index.html') 
+
+if __name__ == 'main':
+    app.run() 
