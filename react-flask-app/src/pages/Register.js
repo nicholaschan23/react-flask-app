@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from "@material-ui/core/TextField";
 // import '../css/register.css';
 
 export default function Register() {
@@ -12,38 +13,40 @@ export default function Register() {
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: '', password: ''};
-    this.handleUser = this.handleUser.bind(this);
-    this.handlePW = this.handlePW.bind(this);
+    this.state = {first: '', last: ''};
+    this.handleFirst = this.handleFirst.bind(this);
+    this.handleLast = this.handleLast.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSetLast = this.handleSetLast.bind(this);
   }
 
-  handleUser(event) {
-    this.setState({username: event.target.value});
+  handleFirst(event) {
+    this.setState({first: event.target.value});
   }
-  handlePW(event) {
-    this.setState({password: event.target.value});
+  handleLast(event) {
+    this.setState({last: event.target.value});
   }
-
   handleSubmit(event) {
-    alert('Logging in as: ' + this.state.password);
     event.preventDefault();
+    fetch("http://127.0.0.1:5000/first_name/" + this.state.first)
+    .then(response => this.setState({last: response.json()}))
+    .then(data => this.setState({last: data}))
+    .catch(error => {console.log(error)})
   }
-
 
   render() {
     return (
-      <form id = "form" onSubmit={this.handleSubmit} >
-        <label id = "center-elem">
+      <form onSubmit={this.handleSubmit} >
+        <label>
           Your input request to server
           <br />
-          <input id = "u-box-pads" type="text" value={this.state.username} onChange={this.handleUser} />
+          <input type="text" value={this.state.first} onChange={this.handleFirst} />
         </label>
         <br />
-        <label id = "center-elem">
+        <label>
           Response from server
           <br />
-          <input id = "pw-box-pads" type="text" value={this.state.password} onChange={this.handlePW} />
+          <input type="text" value={this.state.last} onChange={this.handleLast} />
         </label>
         <br />
         <input type="submit" value="Submit" />
