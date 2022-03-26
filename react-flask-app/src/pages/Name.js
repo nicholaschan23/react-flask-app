@@ -1,7 +1,7 @@
  import React, { useState } from "react";
  import TextField from "@material-ui/core/TextField";
  
- // the input and output fields
+ // input and output fields
  export default function Fields() {
   const [input, setInput] = useState("")
   const [output, setOutput] = useState("User Not Found")
@@ -14,6 +14,7 @@
         className="inputField"
       >
         <h2>Your input request to server</h2>
+        <label>Type "Nick" to see the response.</label>
         <TextField
           id="outlined-basic"
           variant="outlined"
