@@ -13,7 +13,7 @@
       <div
         className="inputField"
       >
-        <h2>Your input request to server</h2>
+        <h2>Your input request to server.</h2>
         <label>Type "Nick" to see the response.</label>
         <br />
         <TextField
@@ -38,7 +38,7 @@
       <div
         className="outputField"
       >
-        <h2>Response from server</h2>
+        <h2>Response from server.</h2>
         <TextField
           id="outlined-basic"
           variant="outlined"
