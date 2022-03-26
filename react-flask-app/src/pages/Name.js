@@ -26,13 +26,9 @@
               fetch("/first_name/" + e.target.value)
                 // set the output text to what the flask app responded with
                 .then(response => response.json())
-                .then(data => {
-                  setOutput(data.lastname)
-                })
+                .then(data => {setOutput(data.lastname)})
                 // log an error if it occurred
-                .catch(error => {
-                  setOutput(error)
-                })
+                .catch(error => {setOutput(error)})
             }
           }
         />
