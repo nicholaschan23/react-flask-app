@@ -15,6 +15,7 @@
       >
         <h2>Your input request to server</h2>
         <label>Type "Nick" to see the response.</label>
+        <br />
         <TextField
           id="outlined-basic"
           variant="outlined"
