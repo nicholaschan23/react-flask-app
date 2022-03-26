@@ -28,8 +28,8 @@ class LoginForm extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    fetch("http://127.0.0.1:5000/first_name/" + this.state.first)
-    .then(response => this.setState({last: response.json()}))
+    fetch("/first_name/" + this.state.first)
+    // .then(response => this.setState({last: response.json()}))
     .then(data => this.setState({last: data}))
     .catch(error => {console.log(error)})
   }
