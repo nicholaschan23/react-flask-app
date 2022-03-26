@@ -22,8 +22,8 @@
             (e) => {
               setInput(e.target.value);
               // fetch the flask app's response
-              fetch("http://127.0.0.1:5000/first_name/" + e.target.value)
-              // fetch("/first_name/" + e.target.value)
+              // fetch("http://127.0.0.1:5000/first_name/" + e.target.value)
+              fetch("/first_name/" + e.target.value)
                 // set the output text to what the flask app responded with
                 .then(response => response.json())
                 .then(data => {
