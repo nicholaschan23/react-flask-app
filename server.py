@@ -4,8 +4,8 @@ from typing import Optional
 # comment out when on heroku
 # from flask_cors import CORS
 
-# app = Flask(__name__, static_folder="react-flask-app/build", static_url_path="") 
-app = Flask(__name__, static_folder="./react-flask-app/build", static_url_path='/') 
+app = Flask(__name__, static_folder="react-flask-app/build", static_url_path="") 
+# app = Flask(__name__, static_folder="./react-flask-app/build", static_url_path='/') 
 # where static files are stored
 # static_url_path is seen in front end, static_folder seen in backend
 
@@ -27,4 +27,4 @@ def generate_output(input: Optional[str]=None):
     return jsonify(lastname=output)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")
