@@ -12,9 +12,9 @@ app = Flask(__name__, static_folder="./react-flask-app/build", static_url_path='
 # comment out when on heroku
 # CORS(app)
 
-# @app.route('/')
-# def index():
-#     return app.send_static_file('index.html')
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 # 2 routes to generate output
 @app.route("/first_name/")
